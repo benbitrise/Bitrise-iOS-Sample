@@ -59,10 +59,10 @@ app:
     BITRISE_EXPORT_METHOD: development
   - opts:
       is_expand: false
-    BITRISE_PROFILE_ID: b103a1f0-1f51-4d53-a41f-c08719676e94
+    BITRISE_PROFILE_ID: 62dad970-7330-4e50-a0a5-38ab8760704d
   - opts:
       is_expand: false
-    BITRISE_CODE_SIGNING_IDENTITY: 'iPhone Developer: Dev Portal Bot Bitrise (E89JV3W9K4)'
+    BITRISE_CODE_SIGNING_IDENTITY: 'Apple Development: Ben Boral (L5Y7PBM38G)'
   - opts:
       is_expand: false
     BITRISE_TEAM: 72SA8V3WYL
