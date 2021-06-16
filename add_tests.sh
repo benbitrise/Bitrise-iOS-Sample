@@ -2,18 +2,18 @@
 
 ui_test_file=$(find . | grep BitriseTestUITests.swift)
 file_contents=$(cat $ui_test_file)
-editing_file=$(echo ${file_contents%\}*})
+$editing_file=$(echo ${file_contents%\}*})
 for i in {1..100}
 do
-editing_file+="""
+$editing_file+="""
     func testExample$i() throws {
         let app = XCUIApplication()
         app.launch()
     }
-""" >> editing_file
+"""
 done
 
-editing_file+="""
+$editing_file+="""
 }
 """
 
