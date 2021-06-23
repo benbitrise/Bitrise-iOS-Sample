@@ -58,7 +58,7 @@ workflows:
             primary
         - build_artifacts_save_path: ''
         - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-    - build-router-wait@0:
+    - git::https://github.com/benbitrise/bitrise-step-build-router-wait@flexible_path:
         inputs:
         - build_artifacts_save_path: $BITRISE_DEPLOY_DIR
         - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
