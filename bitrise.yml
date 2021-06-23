@@ -50,6 +50,8 @@ workflows:
     - cache-push@2: {}
   fanout:
     steps:
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - build-router-start@0:
         inputs:
         - workflows: |-
