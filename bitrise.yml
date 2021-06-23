@@ -56,7 +56,6 @@ workflows:
         inputs:
         - workflows: |-
             primary
-            primary
         - build_artifacts_save_path: ''
         - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
     - build-router-wait@0:
