@@ -3,6 +3,8 @@ format_version: '8'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 trigger_map:
+- push_branch: "fanout"
+  workflow: fanout
 - push_branch: "*"
   workflow: primary
 - pull_request_source_branch: "*"
@@ -46,6 +48,20 @@ workflows:
         - scheme: "$BITRISE_SCHEME"
     - deploy-to-bitrise-io@1: {}
     - cache-push@2: {}
+  fanout:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            primary
+            primary
+        - build_artifacts_save_path: ''
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+    - build-router-wait@0:
+        inputs:
+        - build_artifacts_save_path: $BITRISE_DEPLOY_DIR
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+    - deploy-to-bitrise-io@1: {}
 app:
   envs:
   - opts:
