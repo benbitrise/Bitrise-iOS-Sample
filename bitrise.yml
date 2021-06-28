@@ -30,6 +30,10 @@ workflows:
         - export_method: $BITRISE_EXPORT_METHOD
     - deploy-to-bitrise-io@1: {}
     - cache-push@2: {}
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.4core
   primary:
     steps:
     - activate-ssh-key@4:
@@ -66,3 +70,6 @@ app:
   - opts:
       is_expand: false
     BITRISE_TEAM: 72SA8V3WYL
+meta:
+  bitrise.io:
+    machine_type_id: g2.12core
