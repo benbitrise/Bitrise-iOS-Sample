@@ -52,6 +52,15 @@ workflows:
     steps:
     - activate-ssh-key@4:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - script@1:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+            envman add --key BITRISE_DEPLOY_DIR --value "${BITRISE_DEPLOY_DIR}/"
     - build-router-start@0:
         inputs:
         - workflows: |-
