@@ -13,11 +13,14 @@ workflows:
     - activate-ssh-key@4:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@4: {}
+    - recreate-user-schemes@1:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
     - xcode-test@2:
         inputs:
         - project_path: "$BITRISE_PROJECT_PATH"
         - scheme: "$BITRISE_SCHEME"
-        - xcodebuild_test_options: parallel-testing-enabled YES -maximum-parallel-testing-workers 2
+        - xcodebuild_test_options: -parallel-testing-enabled YES -maximum-parallel-testing-workers 2
 app:
   envs:
   - opts:
