@@ -23,7 +23,8 @@ workflows:
         - output_tool: xcodebuild
         - simulator_device: iPhone 11
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -maximum-parallel-testing-workers $SIMULATOR_COUNT'
-    - bitrise-run@0: {}
+    - bitrise-run@0: 
+        is_always_run: true
     meta:
       bitrise.io:
         stack: osx-xcode-12.5.x
