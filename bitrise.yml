@@ -1,6 +1,6 @@
 ---
 format_version: '8'
-default_step_lib_source: 'https://github.com/bitrise-io/bitrise-steplib.git'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 trigger_map:
 - push_branch: '*'
@@ -15,15 +15,25 @@ workflows:
     - git-clone@4: {}
     - recreate-user-schemes@1:
         inputs:
-        - project_path: $BITRISE_PROJECT_PATH
+        - project_path: "$BITRISE_PROJECT_PATH"
     - xcode-test@2:
         inputs:
-        - project_path: $BITRISE_PROJECT_PATH
-        - scheme: $BITRISE_SCHEME
+        - project_path: "$BITRISE_PROJECT_PATH"
+        - scheme: "$BITRISE_SCHEME"
         - output_tool: xcodebuild
-        - xcpretty_test_options: ''
         - simulator_device: iPhone 11
-        - xcodebuild_test_options: '-parallel-testing-enabled YES -maximum-parallel-testing-workers 2'
+        - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -maximum-parallel-testing-workers $SIMULATOR_COUNT'
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: elite
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '1'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'NO'
 app:
   envs:
   - opts:
@@ -44,3 +54,12 @@ app:
   - opts:
       is_expand: false
     BITRISE_TEAM: 72SA8V3WYL
+  - opts:
+      is_expand: false
+    MACHINE_TYPE: g2.4core
+  - opts:
+      is_expand: false
+    SIMULATOR_COUNT: '1'
+  - opts:
+      is_expand: false
+    PARALLEL_TESTING: 'NO'
