@@ -1,11 +1,11 @@
 ---
 format_version: '8'
-default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+default_step_lib_source: 'https://github.com/bitrise-io/bitrise-steplib.git'
 project_type: ios
 trigger_map:
-- push_branch: "*"
+- push_branch: '*'
   workflow: primary
-- pull_request_source_branch: "*"
+- pull_request_source_branch: '*'
   workflow: primary
 workflows:
   primary:
@@ -15,12 +15,15 @@ workflows:
     - git-clone@4: {}
     - recreate-user-schemes@1:
         inputs:
-        - project_path: "$BITRISE_PROJECT_PATH"
+        - project_path: $BITRISE_PROJECT_PATH
     - xcode-test@2:
         inputs:
-        - project_path: "$BITRISE_PROJECT_PATH"
-        - scheme: "$BITRISE_SCHEME"
-        - xcodebuild_test_options: -parallel-testing-enabled YES -maximum-parallel-testing-workers 2
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME
+        - output_tool: xcodebuild
+        - xcpretty_test_options: ''
+        - simulator_device: iPhone 11
+        - xcodebuild_test_options: '-parallel-testing-enabled YES -maximum-parallel-testing-workers 2'
 app:
   envs:
   - opts:
