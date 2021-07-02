@@ -200,6 +200,90 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
+  clone_test-gen2-12_core-xcode12.5-1_sim:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '1'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'NO'
+  clone_test-gen2-12_core-xcode12.5-2_sims:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '2'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'YES'
+  clone_test-gen2-12_core-xcode12.5-3_sims:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '3'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'YES'
+  clone_test-gen2-12_core-xcode12.5-4_sims:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '4'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'YES'
+  clone_test-gen2-12_core-xcode12.5-5_sims:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '5'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'YES'
+  clone_test-gen2-12_core-xcode12.5-6_sims:
+    after_run:
+    - primary
+    meta:
+      bitrise.io:
+        stack: osx-xcode-12.5.x
+        machine_type_id: g2.12core
+    envs:
+    - opts:
+        is_expand: false
+      SIMULATOR_COUNT: '6'
+    - opts:
+        is_expand: false
+      PARALLEL_TESTING: 'YES'
 app:
   envs:
   - opts:
