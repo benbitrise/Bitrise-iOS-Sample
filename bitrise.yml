@@ -26,6 +26,7 @@ workflows:
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -parallel-testing-worker-count $SIMULATOR_COUNT'
     - deploy-to-bitrise-io@1: {}
     - build-router-start@0:
+        is_always_run: true
         inputs:
         - workflows: $BITRISE_TRIGGERED_WORKFLOW_ID
         - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
