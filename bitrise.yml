@@ -28,14 +28,7 @@ workflows:
     meta:
       bitrise.io:
         stack: osx-xcode-12.5.x
-        machine_type_id: elite
-    envs:
-    - opts:
-        is_expand: false
-      SIMULATOR_COUNT: '1'
-    - opts:
-        is_expand: false
-      PARALLEL_TESTING: 'NO'
+        machine_type_id: g2.8core
   clone_test-gen2-4_core-xcode12.5-2_sims:
     after_run:
     - primary
