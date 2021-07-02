@@ -21,6 +21,7 @@ workflows:
         - project_path: "$BITRISE_PROJECT_PATH"
         - scheme: "$BITRISE_SCHEME"
         - output_tool: xcodebuild
+        - headless_mode: 'no'
         - simulator_device: iPhone 11
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -parallel-testing-worker-count $SIMULATOR_COUNT'
     - deploy-to-bitrise-io@1: {}
