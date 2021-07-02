@@ -23,6 +23,7 @@ workflows:
         - output_tool: xcodebuild
         - simulator_device: iPhone 11
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -parallel-testing-worker-count $SIMULATOR_COUNT -maximum-parallel-testing-workers $SIMULATOR_COUNT'
+    - deploy-to-bitrise-io@1: {}
     - build-router-start@0:
         inputs:
         - workflows: $BITRISE_TRIGGERED_WORKFLOW_ID
