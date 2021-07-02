@@ -36,7 +36,7 @@ workflows:
         is_expand: false
       PARALLEL_TESTING: 'NO'
   clone_test-gen2-4_core-xcode12.5-2_sims:
-    before_run:
+    after_run:
     - primary
     meta:
       bitrise.io:
@@ -50,7 +50,7 @@ workflows:
         is_expand: false
       PARALLEL_TESTING: 'YES'
   clone_test-gen2-4_core-xcode12.5-1_sim:
-    before_run:
+    after_run:
     - primary
     meta:
       bitrise.io:
