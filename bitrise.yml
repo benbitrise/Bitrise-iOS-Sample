@@ -538,6 +538,78 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
+  start_12.5_4core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-4_core-xcode12.5-1_sim
+            clone_test-gen2-4_core-xcode12.5-2_sims
+            clone_test-gen2-4_core-xcode12.5-3_sims
+            clone_test-gen2-4_core-xcode12.5-4_sims
+            clone_test-gen2-4_core-xcode12.5-5_sims
+            clone_test-gen2-4_core-xcode12.5-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+  start_12.5_8core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-8_core-xcode12.5-1_sim
+            clone_test-gen2-8_core-xcode12.5-2_sims
+            clone_test-gen2-8_core-xcode12.5-3_sims
+            clone_test-gen2-8_core-xcode12.5-4_sims
+            clone_test-gen2-8_core-xcode12.5-5_sims
+            clone_test-gen2-8_core-xcode12.5-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+  start_12.5_12core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-12_core-xcode12.5-1_sim
+            clone_test-gen2-12_core-xcode12.5-2_sims
+            clone_test-gen2-12_core-xcode12.5-3_sims
+            clone_test-gen2-12_core-xcode12.5-4_sims
+            clone_test-gen2-12_core-xcode12.5-5_sims
+            clone_test-gen2-12_core-xcode12.5-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+  start_13.0_4core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-4_core-xcode13.0-1_sim
+            clone_test-gen2-4_core-xcode13.0-2_sims
+            clone_test-gen2-4_core-xcode13.0-3_sims
+            clone_test-gen2-4_core-xcode13.0-4_sims
+            clone_test-gen2-4_core-xcode13.0-5_sims
+            clone_test-gen2-4_core-xcode13.0-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+  start_13.0_8core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-8_core-xcode13.0-1_sim
+            clone_test-gen2-8_core-xcode13.0-2_sims
+            clone_test-gen2-8_core-xcode13.0-3_sims
+            clone_test-gen2-8_core-xcode13.0-4_sims
+            clone_test-gen2-8_core-xcode13.0-5_sims
+            clone_test-gen2-8_core-xcode13.0-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+  start_13.0_12core:
+    steps:
+    - build-router-start@0:
+        inputs:
+        - workflows: |-
+            clone_test-gen2-12_core-xcode13.0-1_sim
+            clone_test-gen2-12_core-xcode13.0-2_sims
+            clone_test-gen2-12_core-xcode13.0-3_sims
+            clone_test-gen2-12_core-xcode13.0-4_sims
+            clone_test-gen2-12_core-xcode13.0-5_sims
+            clone_test-gen2-12_core-xcode13.0-6_sims
+        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
 app:
   envs:
   - opts:
