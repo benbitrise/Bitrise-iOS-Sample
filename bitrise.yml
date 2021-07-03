@@ -24,7 +24,8 @@ workflows:
         - headless_mode: 'no'
         - simulator_device: iPhone 11
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -parallel-testing-worker-count $SIMULATOR_COUNT'
-    - deploy-to-bitrise-io@1: {}
+    - deploy-to-bitrise-io@1:
+        is_always_run: true
     - build-router-start@0:
         is_always_run: true
         inputs:
