@@ -4,7 +4,7 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 trigger_map:
 - push_branch: '*'
-  workflow: primary
+  workflow: start_12_4
 - pull_request_source_branch: '*'
   workflow: primary
 workflows:
@@ -535,78 +535,17 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  start_12.4_4core:
+  start_12_4:
     steps:
-    - build-router-start@0:
+    - script@1:
         inputs:
-        - workflows: |-
-            clone_test-gen2-4_core-xcode12.4-1_sim
-            clone_test-gen2-4_core-xcode12.4-2_sims
-            clone_test-gen2-4_core-xcode12.4-3_sims
-            clone_test-gen2-4_core-xcode12.4-4_sims
-            clone_test-gen2-4_core-xcode12.4-5_sims
-            clone_test-gen2-4_core-xcode12.4-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-  start_12.4_8core:
-    steps:
-    - build-router-start@0:
-        inputs:
-        - workflows: |-
-            clone_test-gen2-8_core-xcode12.4-1_sim
-            clone_test-gen2-8_core-xcode12.4-2_sims
-            clone_test-gen2-8_core-xcode12.4-3_sims
-            clone_test-gen2-8_core-xcode12.4-4_sims
-            clone_test-gen2-8_core-xcode12.4-5_sims
-            clone_test-gen2-8_core-xcode12.4-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-  start_12.4_12core:
-    steps:
-    - build-router-start@0:
-        inputs:
-        - workflows: |-
-            clone_test-gen2-12_core-xcode12.4-1_sim
-            clone_test-gen2-12_core-xcode12.4-2_sims
-            clone_test-gen2-12_core-xcode12.4-3_sims
-            clone_test-gen2-12_core-xcode12.4-4_sims
-            clone_test-gen2-12_core-xcode12.4-5_sims
-            clone_test-gen2-12_core-xcode12.4-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-  start_13.0_4core:
-    steps:
-    - build-router-start@0:
-        inputs:
-        - workflows: |-
-            clone_test-gen2-4_core-xcode13.0-1_sim
-            clone_test-gen2-4_core-xcode13.0-2_sims
-            clone_test-gen2-4_core-xcode13.0-3_sims
-            clone_test-gen2-4_core-xcode13.0-4_sims
-            clone_test-gen2-4_core-xcode13.0-5_sims
-            clone_test-gen2-4_core-xcode13.0-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-  start_13.0_8core:
-    steps:
-    - build-router-start@0:
-        inputs:
-        - workflows: |-
-            clone_test-gen2-8_core-xcode13.0-1_sim
-            clone_test-gen2-8_core-xcode13.0-2_sims
-            clone_test-gen2-8_core-xcode13.0-3_sims
-            clone_test-gen2-8_core-xcode13.0-4_sims
-            clone_test-gen2-8_core-xcode13.0-5_sims
-            clone_test-gen2-8_core-xcode13.0-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
-  start_13.0_12core:
-    steps:
-    - build-router-start@0:
-        inputs:
-        - workflows: |-
-            clone_test-gen2-12_core-xcode13.0-1_sim
-            clone_test-gen2-12_core-xcode13.0-2_sims
-            clone_test-gen2-12_core-xcode13.0-3_sims
-            clone_test-gen2-12_core-xcode13.0-4_sims
-            clone_test-gen2-12_core-xcode13.0-5_sims
-            clone_test-gen2-12_core-xcode13.0-6_sims
-        - access_token: $BITRISE_PERSONAL_ACCESS_TOKEN
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+            curl https://app.bitrise.io/app/${BITRISE_APP_SLUG}/build/start.json --data '{"hook_info":{"type":"bitrise","build_trigger_token":"$BUILD_TRIGGER_TOKEN"},"build_params":{"branch":"many_ui_tests","workflow_id":"clone_test-gen2-4_core-xcode12.4-1_sim"},"triggered_by":"curl"}'
 app:
   envs:
   - opts:
@@ -636,3 +575,7 @@ app:
   - opts:
       is_expand: false
     PARALLEL_TESTING: 'NO'
+
+
+
+    
