@@ -551,11 +551,7 @@ workflows:
 
               echo "Timeout: $SECONDS elapsed out of $end allotted "
 
-              running_builds=$(curl -s "https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds?status=0" -H "accept: application/json" -H "Authorization: $BITRISE_PERSONAL_ACCESS_TOKEN")
-
-              echo $running_builds
-
-              continue
+              running_builds=$(curl -s "https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds?status=0" -H "accept: application/json" -H "Authorization: $BITRISE_PERSONAL_ACCESS_TOKEN" | jq ".data | length")
 
               if [[ "$running_builds" -gt '1' ]]; then
                 echo "There are still running builds. Not starting more"
