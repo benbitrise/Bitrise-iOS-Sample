@@ -29,7 +29,7 @@ workflows:
       bitrise.io:
         stack: osx-xcode-12.4.x
         machine_type_id: g2.8core
-  clone_test-gen2-4_core-xcode12.4-1_sim:
+  clone_test-gen2-4_core-xcode12.4-1_sims:
     after_run:
     - primary
     meta:
@@ -113,7 +113,7 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  clone_test-gen2-8_core-xcode12.4-1_sim:
+  clone_test-gen2-8_core-xcode12.4-1_sims:
     after_run:
     - primary
     meta:
@@ -197,7 +197,7 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  clone_test-gen2-12_core-xcode12.4-1_sim:
+  clone_test-gen2-12_core-xcode12.4-1_sims:
     after_run:
     - primary
     meta:
@@ -281,7 +281,7 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  clone_test-gen2-4_core-xcode13.0-1_sim:
+  clone_test-gen2-4_core-xcode13.0-1_sims:
     after_run:
     - primary
     meta:
@@ -365,7 +365,7 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  clone_test-gen2-8_core-xcode13.0-1_sim:
+  clone_test-gen2-8_core-xcode13.0-1_sims:
     after_run:
     - primary
     meta:
@@ -449,7 +449,7 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-  clone_test-gen2-12_core-xcode13.0-1_sim:
+  clone_test-gen2-12_core-xcode13.0-1_sims:
     after_run:
     - primary
     meta:
