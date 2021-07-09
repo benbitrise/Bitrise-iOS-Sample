@@ -22,7 +22,7 @@ workflows:
         - headless_mode: 'no'
         - simulator_os_version: '14.4'
         - simulator_device: iPhone 11
-        - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -parallel-testing-worker-count $SIMULATOR_COUNT'
+        - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -max-parallel-testing-workers $SIMULATOR_COUNT'
     - deploy-to-bitrise-io@1:
         is_always_run: true
     meta:
@@ -545,7 +545,7 @@ workflows:
             set -x
 
 
-            end=$((SECONDS+48*60*60))
+            end=$((SECONDS+24*60*60))
 
             while [ $SECONDS -lt $end ]; do
 
@@ -559,10 +559,11 @@ workflows:
                 continue
               fi
 
-              echo "Starting builds"
-              for SIM_COUNT in {1..6}
+              echo "Starting builds" 
+
+              for workflow_suffix in xcode13.0-6_sims xcode12.5-6_sims xcode12.4-6_sims xcode12.3-6_sims xcode12.2-6_sims xcode12.1-6_sims xcode12.0-6_sims xcode11.7-6_sims
               do
-                curl https://app.bitrise.io/app/${BITRISE_APP_SLUG}/build/start.json --data "{\"hook_info\":{\"type\":\"bitrise\",\"build_trigger_token\":\"${BUILD_TRIGGER_TOKEN}\"},\"build_params\":{\"branch\":\"many_ui_tests\",\"workflow_id\":\"clone_test-gen2-4_core-xcode12.4-${SIM_COUNT}_sims\"},\"triggered_by\":\"curl\"}"
+                curl https://app.bitrise.io/app/${BITRISE_APP_SLUG}/build/start.json --data "{\"hook_info\":{\"type\":\"bitrise\",\"build_trigger_token\":\"${BUILD_TRIGGER_TOKEN}\"},\"build_params\":{\"branch\":\"many_ui_tests\",\"workflow_id\":\"clone_test-gen2-4_core-\"},\"triggered_by\":\"curl\"}"
                 sleep 10
               done
             done
