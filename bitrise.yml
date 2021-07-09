@@ -20,8 +20,8 @@ workflows:
         - scheme: "$BITRISE_SCHEME"
         - output_tool: xcodebuild
         - headless_mode: 'no'
-        - simulator_os_version: '14.4'
-        - simulator_device: iPhone 11
+        - simulator_os_version: 'latest'
+        - simulator_device: iPhone 8
         - xcodebuild_test_options: '-parallel-testing-enabled $PARALLEL_TESTING -max-parallel-testing-workers $SIMULATOR_COUNT'
     - deploy-to-bitrise-io@1:
         is_always_run: true
