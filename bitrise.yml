@@ -553,7 +553,7 @@ workflows:
               echo $SECONDS
               echo $end
 
-              running_builds=($curl -s "https://api.bitrise.io/v0.1/apps/d3d618764c9a906d/builds?status=0" -H "accept: application/json" -H "Authorization: W5FnDR_bVOUMmh_6Ct_VR8NlSwYJfKEQ9EDAi2sb_BxeKyGtm8wMM9e5KFJldiBhVJ_oFllvhKvfapJ2LOGqdg" | jq ".data | length")  
+              running_builds=$(curl -s "https://api.bitrise.io/v0.1/apps/d3d618764c9a906d/builds?status=0" -H "accept: application/json" -H "Authorization: W5FnDR_bVOUMmh_6Ct_VR8NlSwYJfKEQ9EDAi2sb_BxeKyGtm8wMM9e5KFJldiBhVJ_oFllvhKvfapJ2LOGqdg" | jq ".data | length")  
 
               if [[ "$running_builds" -gt '1' ]]; then
                 echo "There are still running builds. Not starting more"
