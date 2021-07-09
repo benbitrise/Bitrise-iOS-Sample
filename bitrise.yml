@@ -368,6 +368,9 @@ workflows:
 
   start_4_core:
     steps:
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4: {}
     - script@1:
         inputs:
         - content: |-
@@ -375,6 +378,9 @@ workflows:
             ./start_builds.sh 4
   start_8_core:
     steps:
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4: {}
     - script@1:
         inputs:
         - content: |-
@@ -382,6 +388,9 @@ workflows:
             ./start_builds.sh 8
   start_12_core:
     steps:
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4: {}
     - script@1:
         inputs:
         - content: |-
