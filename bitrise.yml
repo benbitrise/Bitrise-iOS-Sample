@@ -546,7 +546,7 @@ workflows:
 
             for SIM_COUNT in {1..6}
             do
-            curl https://app.bitrise.io/app/${BITRISE_APP_SLUG}/build/start.json --data "{\"hook_info\":{\"type\":\"bitrise\",\"build_trigger_token\":\"${BUILD_TRIGGER_TOKEN}\"},\"build_params\":{\"branch\":\"many_ui_tests\",\"workflow_id\":\"clone_test-gen2-4_core-xcode12.4-${SIM_COUNT}_sim\"},\"triggered_by\":\"curl\"}"
+            curl https://app.bitrise.io/app/${BITRISE_APP_SLUG}/build/start.json --data "{\"hook_info\":{\"type\":\"bitrise\",\"build_trigger_token\":\"${BUILD_TRIGGER_TOKEN}\"},\"build_params\":{\"branch\":\"many_ui_tests\",\"workflow_id\":\"clone_test-gen2-4_core-xcode12.4-${SIM_COUNT}_sims\"},\"triggered_by\":\"curl\"}"
             sleep 10
             done
 app:
