@@ -389,6 +389,8 @@ workflows:
         inputs:
         - content: |-
             #!/usr/bin/env bash
+            pwd
+            ls
             ./start_builds.sh 12
 app:
   envs:
