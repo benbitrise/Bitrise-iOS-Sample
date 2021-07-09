@@ -375,21 +375,21 @@ workflows:
         inputs:
         - content: |-
             #!/usr/bin/env bash
-            ./start_builds 4
+            ./start_builds.sh 4
   start_8_core:
     steps:
     - script@1:
         inputs:
         - content: |-
             #!/usr/bin/env bash
-            ./start_builds 8
+            ./start_builds.sh 8
   start_12_core:
     steps:
     - script@1:
         inputs:
         - content: |-
             #!/usr/bin/env bash
-            ./start_builds 12
+            ./start_builds.sh 12
 app:
   envs:
   - opts:
