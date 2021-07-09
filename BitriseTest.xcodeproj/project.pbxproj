@@ -13,6 +13,10 @@
 		A1F9B10E25C380F400E21DE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F9B10D25C380F400E21DE4 /* Preview Assets.xcassets */; };
 		A1F9B11925C380F500E21DE4 /* BitriseTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9B11825C380F500E21DE4 /* BitriseTestTests.swift */; };
 		A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */; };
+		AFB085352697D38300A27FFA /* BitriseUITests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB085342697D38300A27FFA /* BitriseUITests2.swift */; };
+		AFB085372697D38F00A27FFA /* BitriseUITests3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB085362697D38F00A27FFA /* BitriseUITests3.swift */; };
+		AFB085392697D39F00A27FFA /* BitriseUITests4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB085382697D39F00A27FFA /* BitriseUITests4.swift */; };
+		AFB0853B2697D3AA00A27FFA /* BitriseUITests5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0853A2697D3AA00A27FFA /* BitriseUITests5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		A1F9B11F25C380F500E21DE4 /* BitriseTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitriseTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests.swift; sourceTree = "<group>"; };
 		A1F9B12525C380F500E21DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB085342697D38300A27FFA /* BitriseUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseUITests2.swift; sourceTree = "<group>"; };
+		AFB085362697D38F00A27FFA /* BitriseUITests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseUITests3.swift; sourceTree = "<group>"; };
+		AFB085382697D39F00A27FFA /* BitriseUITests4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseUITests4.swift; sourceTree = "<group>"; };
+		AFB0853A2697D3AA00A27FFA /* BitriseUITests5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseUITests5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 			children = (
 				A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */,
 				A1F9B12525C380F500E21DE4 /* Info.plist */,
+				AFB085342697D38300A27FFA /* BitriseUITests2.swift */,
+				AFB085362697D38F00A27FFA /* BitriseUITests3.swift */,
+				AFB085382697D39F00A27FFA /* BitriseUITests4.swift */,
+				AFB0853A2697D3AA00A27FFA /* BitriseUITests5.swift */,
 			);
 			path = BitriseTestUITests;
 			sourceTree = "<group>";
@@ -276,7 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB0853B2697D3AA00A27FFA /* BitriseUITests5.swift in Sources */,
+				AFB085372697D38F00A27FFA /* BitriseUITests3.swift in Sources */,
 				A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */,
+				AFB085352697D38300A27FFA /* BitriseUITests2.swift in Sources */,
+				AFB085392697D39F00A27FFA /* BitriseUITests4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
