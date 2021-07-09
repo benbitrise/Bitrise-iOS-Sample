@@ -14,9 +14,9 @@ while [ $SECONDS -lt $end ]; do
 
     echo "Timeout: $SECONDS elapsed out of $end allotted "
 
-    running_builds=$(curl -s "https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds?status=0" -H "accept: application/json" -H "Authorization: $BITRISE_PERSONAL_ACCESS_TOKEN" | jq ".data | length")
+    running_builds=$(curl -s "https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds?status=0" -H "accept: application/json" -H "Authorization: $BITRISE_PERSONAL_ACCESS_TOKEN" | jq ".data | .[] | .machine_type_id" | grep -c "g2.$core_count")
 
-    if [[ "$running_builds" -gt '1' ]]; then
+    if [[ "$running_builds" -gt '0' ]]; then
     echo "There are still running builds. Not starting more"
     sleep 30
     continue
