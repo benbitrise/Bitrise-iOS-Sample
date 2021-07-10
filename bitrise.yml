@@ -11,6 +11,11 @@ workflows:
     - activate-ssh-key@4:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@4: {}
+    - script@1:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+                sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
     - xcode-test@2:
         inputs:
         - project_path: "$BITRISE_PROJECT_PATH"
@@ -425,7 +430,6 @@ app:
   - opts:
       is_expand: false
     PARALLEL_TESTING: 'NO'
-
-
-
-    
+  - opts:
+      is_expand: false
+    DEPLOYMENT_TARGET: '14.5' 
