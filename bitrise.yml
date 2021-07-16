@@ -15,7 +15,9 @@ workflows:
         inputs:
         - content: |-
             #!/usr/bin/env bash
-                sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
+            set +x
+            sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
+            git diff
     - xcode-test@2:
         inputs:
         - project_path: "$BITRISE_PROJECT_PATH"
@@ -367,10 +369,6 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
-
-
-
-
   start_4_core:
     steps:
     - activate-ssh-key@4:
