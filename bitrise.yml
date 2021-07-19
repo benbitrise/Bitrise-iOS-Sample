@@ -17,7 +17,7 @@ workflows:
         - content: |-
             #!/usr/bin/env bash
             set +x
-            sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
+            # sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
             git diff
     - xcode-test@2:
         inputs:
@@ -48,6 +48,9 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
+    - opts:
+        is_expand: false
+      DEPLOYMENT_TARGET: '15.0' 
   clone_test-gen2-4_core-xcode12.5-6_sims:
     after_run:
     - primary
@@ -76,6 +79,9 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
+    - opts:
+        is_expand: false
+      DEPLOYMENT_TARGET: '15.0' 
   clone_test-gen2-8_core-xcode12.5-6_sims:
     after_run:
     - primary
@@ -104,6 +110,9 @@ workflows:
     - opts:
         is_expand: false
       PARALLEL_TESTING: 'YES'
+    - opts:
+        is_expand: false
+      DEPLOYMENT_TARGET: '15.0' 
   clone_test-gen2-12_core-xcode12.5-6_sims:
     after_run:
     - primary
