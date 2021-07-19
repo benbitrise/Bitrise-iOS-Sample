@@ -26,7 +26,7 @@ while [ $SECONDS -lt $end ]; do
     echo "Starting builds" 
 
     workflow_suffixes=("xcode13.0-6_sims" "xcode12.5-6_sims")
-    deployment_targets=("14.5" "14.5")
+    deployment_targets=("15.0" "14.5")
     
     for i in {0..7};
     do
