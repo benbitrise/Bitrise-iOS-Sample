@@ -19,7 +19,7 @@ workflows:
             set +x
             # sed -i "" "s/IPHONEOS_DEPLOYMENT_TARGET = [0-9][0-9]\.[0-9]/IPHONEOS_DEPLOYMENT_TARGET = ${DEPLOYMENT_TARGET}/g" BitriseTest.xcodeproj/project.pbxproj
             git diff
-    - xcode-test@2:
+    - git::https://github.com/benbitrise/go-xcode.git@simulator_stability:
         inputs:
         - project_path: "$BITRISE_PROJECT_PATH"
         - scheme: "$BITRISE_SCHEME"
