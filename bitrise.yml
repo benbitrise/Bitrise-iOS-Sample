@@ -49,7 +49,7 @@ workflows:
     meta:
       bitrise.io:
         machine_type_id: g2.8core
-        stack: poo
+        stack: poo-xcode-13.1.x
 app:
   envs:
   - opts:
