@@ -32,7 +32,7 @@ workflows:
     meta:
       bitrise.io:
         machine_type_id: g2.8core
-        stack: poo
+        stack: osx-xcode-13.1.x
   primary:
     steps:
     - activate-ssh-key@4:
@@ -49,7 +49,7 @@ workflows:
     meta:
       bitrise.io:
         machine_type_id: g2.8core
-        stack: poo
+        stack: osx-xcode-13.2.x
 app:
   envs:
   - opts:
@@ -73,4 +73,4 @@ app:
 meta:
   bitrise.io:
     machine_type_id: g2.8core
-    stack: poo
+    stack: osx-xcode-13.1.x
