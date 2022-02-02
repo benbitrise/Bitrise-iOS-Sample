@@ -13,6 +13,8 @@
 		A1F9B10E25C380F400E21DE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1F9B10D25C380F400E21DE4 /* Preview Assets.xcassets */; };
 		A1F9B11925C380F500E21DE4 /* BitriseTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9B11825C380F500E21DE4 /* BitriseTestTests.swift */; };
 		A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */; };
+		AFA624A227AB4D70006FEC2D /* BitriseTestUITests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */; };
+		AFA624A427AB4D7C006FEC2D /* BitriseTestUITests3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		A1F9B11F25C380F500E21DE4 /* BitriseTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitriseTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests.swift; sourceTree = "<group>"; };
 		A1F9B12525C380F500E21DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests2.swift; sourceTree = "<group>"; };
+		AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */,
+				AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */,
+				AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */,
 				A1F9B12525C380F500E21DE4 /* Info.plist */,
 			);
 			path = BitriseTestUITests;
@@ -277,6 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */,
+				AFA624A227AB4D70006FEC2D /* BitriseTestUITests2.swift in Sources */,
+				AFA624A427AB4D7C006FEC2D /* BitriseTestUITests3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
