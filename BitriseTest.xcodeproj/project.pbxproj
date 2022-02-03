@@ -15,6 +15,7 @@
 		A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */; };
 		AFA624A227AB4D70006FEC2D /* BitriseTestUITests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */; };
 		AFA624A427AB4D7C006FEC2D /* BitriseTestUITests3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */; };
+		AFA624A627AB570D006FEC2D /* BitriseTestUITest4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA624A527AB570D006FEC2D /* BitriseTestUITest4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A1F9B12525C380F500E21DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests2.swift; sourceTree = "<group>"; };
 		AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITests3.swift; sourceTree = "<group>"; };
+		AFA624A527AB570D006FEC2D /* BitriseTestUITest4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitriseTestUITest4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				A1F9B12325C380F500E21DE4 /* BitriseTestUITests.swift */,
 				AFA624A127AB4D70006FEC2D /* BitriseTestUITests2.swift */,
 				AFA624A327AB4D7C006FEC2D /* BitriseTestUITests3.swift */,
+				AFA624A527AB570D006FEC2D /* BitriseTestUITest4.swift */,
 				A1F9B12525C380F500E21DE4 /* Info.plist */,
 			);
 			path = BitriseTestUITests;
@@ -285,6 +288,7 @@
 				A1F9B12425C380F500E21DE4 /* BitriseTestUITests.swift in Sources */,
 				AFA624A227AB4D70006FEC2D /* BitriseTestUITests2.swift in Sources */,
 				AFA624A427AB4D7C006FEC2D /* BitriseTestUITests3.swift in Sources */,
+				AFA624A627AB570D006FEC2D /* BitriseTestUITest4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
