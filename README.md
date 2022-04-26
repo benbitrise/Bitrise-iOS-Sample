@@ -1,4 +1,4 @@
- Bitrise-iOS-Sample
+Bitrise-iOS-Sample
 this is a change
 Simple iOS Project 
 
