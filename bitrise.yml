@@ -3,7 +3,7 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
 app:
   envs:
-  - BITRISE_PROJECT_PATH: BitriseTest.xcodeproj
+   - BITRISE_PROJECT_PATH: BitriseTest.xcodeproj
     opts:
       is_expand: false
   - BITRISE_SCHEME: BasicScheme
