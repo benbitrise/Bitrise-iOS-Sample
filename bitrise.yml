@@ -1,7 +1,29 @@
----
-format_version: '11'
+format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: ios
+app:
+  envs:
+  - BITRISE_PROJECT_PATH: BitriseTest.xcodeproj
+    opts:
+      is_expand: false
+  - BITRISE_SCHEME: BasicScheme
+    opts:
+      is_expand: false
+  - BITRISE_DISTRIBUTION_METHOD: development
+    opts:
+      is_expand: false
+  - BITRISE_PROFILE_ID: b103a1f0-1f51-4d53-a41f-c08719676e94
+    opts:
+      is_expand: false
+  - BITRISE_CODE_SIGNING_IDENTITY: 'Apple Development: Ben Boral (L5Y7PBM38G)'
+    opts:
+      is_expand: false
+  - BITRISE_TEAM: 72SA8V3WYL
+    opts:
+      is_expand: false
+trigger_map:
+- push_branch: '*'
+  workflow: primary
 workflows:
   deploy:
     description: |
@@ -19,8 +41,8 @@ workflows:
     - certificate-and-profile-installer@1: {}
     - xcode-test@4:
         inputs:
-        - project_path: "$BITRISE_PROJECT_PATH"
-        - scheme: "$BITRISE_SCHEME"
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME
         - test_repetition_mode: retry_on_failure
     - xcode-archive@4.5:
         inputs:
@@ -28,8 +50,8 @@ workflows:
         - scheme: $BITRISE_SCHEME
         - force_code_sign_identity: $BITRISE_CODE_SIGNING_IDENTITY
         - force_provisioning_profile: $BITRISE_PROFILE_ID
-        - compile_bitcode: 'no'
-        - upload_bitcode: 'no'
+        - compile_bitcode: "no"
+        - upload_bitcode: "no"
         - team_id: $BITRISE_TEAM
         - export_method: $BITRISE_EXPORT_METHOD
     - cache-push@2: {}
@@ -42,35 +64,12 @@ workflows:
       - Check out [Getting started with iOS apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-ios-apps.html).
     steps:
     - activate-ssh-key@4: {}
-    - git-clone@6: {}
     - cache-pull@2: {}
     - xcode-test@4:
         inputs:
-        - project_path: "$BITRISE_PROJECT_PATH"
-        - scheme: "$BITRISE_SCHEME"
+        - project_path: $BITRISE_PROJECT_PATH
+        - scheme: $BITRISE_SCHEME
         - test_repetition_mode: retry_on_failure
+    - saucelabs-espresso-app-automate@0: {}
     - cache-push@2: {}
     - deploy-to-bitrise-io@2: {}
-trigger_map:
-- push_branch: '*'
-  workflow: primary
-app:
-  envs:
-  - opts:
-      is_expand: false
-    BITRISE_PROJECT_PATH: BitriseTest.xcodeproj
-  - opts:
-      is_expand: false
-    BITRISE_SCHEME: BasicScheme
-  - opts:
-      is_expand: false
-    BITRISE_DISTRIBUTION_METHOD: development
-  - opts:
-      is_expand: false
-    BITRISE_PROFILE_ID: b103a1f0-1f51-4d53-a41f-c08719676e94
-  - opts:
-      is_expand: false
-    BITRISE_CODE_SIGNING_IDENTITY: 'Apple Development: Ben Boral (L5Y7PBM38G)'
-  - opts:
-      is_expand: false
-    BITRISE_TEAM: 72SA8V3WYL
